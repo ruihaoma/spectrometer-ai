@@ -1,0 +1,33 @@
+{
+  "artifact": "best_model.pt",
+  "checkpoint_path": "results/final_model/best_model.pt",
+  "sha256": "dda1be29ae42f424d4ef000138c7e9de83d10cfbd4d968cef7304ea8f8b44ae0",
+  "checkpoint_epoch": 74,
+  "best_val_loss": 0.045239608498145144,
+  "model": "SpectrumUNetTransformer1D",
+  "trainable_parameters": 2211073,
+  "training_samples": 64005,
+  "validation_samples": 8001,
+  "generated_dataset_samples": {
+    "real": 6,
+    "synthetic": 80000,
+    "total": 80006,
+    "seed": 42
+  },
+  "original_checkpoint_paths": {
+    "dataset": "data/processed/relative_calib_mixed_v1",
+    "run": "outputs/train_runs/relative_calib_mixed_v1_80k_train"
+  },
+  "project_paths": {
+    "generated_dataset": "data/generated/relative_calib_mixed_v1",
+    "training_config": "configs/train/relative_calib_mixed_v1_80k_train.yaml"
+  },
+  "verification_environment": {
+    "python": "3.13",
+    "numpy": "2.2.4",
+    "torch": "2.12.0+cpu",
+    "opencv_python": "4.13.0.92",
+    "pyyaml": "6.0.3"
+  },
+  "environment_note": "The original GPU, CUDA, driver, and PyTorch versions were not stored in the checkpoint. The checkpoint is verified in the environment above, but bit-for-bit retraining across hardware is not guaranteed."
+}

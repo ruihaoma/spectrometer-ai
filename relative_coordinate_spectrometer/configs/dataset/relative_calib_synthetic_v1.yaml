@@ -1,0 +1,74 @@
+project:
+  name: relative_calib_synthetic_v1
+  status: final_80000_sample_reproduction_config
+
+paths:
+  reference_root: data/raw/reference_spectrometer
+  output_dir: data/generated/relative_calib_synthetic_v1
+
+wavelength:
+  start_nm: 400.0
+  end_nm: 650.0
+  step_nm: 0.1
+  point_count: 2501
+
+generation:
+  sample_count: 80000
+  seed: 42
+  local_max_sample_count: 20
+  allow_large_generation: false
+  reference_sources:
+    - blue_led
+    - green_led
+    - red_led
+    - white_led
+    - purple_led
+    - yellow_led
+    - hg
+    - na
+    - hene
+  generator_weights:
+    reference: 0.30
+    mixed_reference: 0.25
+    gaussian_single_peak: 0.15
+    gaussian_multi_peak: 0.20
+    blended_broad_narrow: 0.10
+
+target_y:
+  peak_count_range: [1, 5]
+  center_nm_range: [405.0, 645.0]
+  sigma_nm_range: [0.3, 28.0]
+  broad_sigma_nm_range: [12.0, 45.0]
+  narrow_sigma_nm_range: [0.2, 2.5]
+  mix_reference_count_range: [2, 4]
+  splice_probability: 0.15
+
+diy_x_simulation:
+  broadening_sigma_nm_range: [0.8, 8.0]
+  channel_extra_broadening_sigma_nm_range: [0.0, 3.0]
+  global_shift_nm_range: [-4.0, 4.0]
+  channel_shift_nm_range: [-2.0, 2.0]
+  intensity_scale_range: [0.65, 1.35]
+  channel_gain_range: [0.65, 1.35]
+  gaussian_noise_std_range: [0.002, 0.045]
+  background_offset_range: [0.0, 0.08]
+  baseline_drift_range: [-0.08, 0.08]
+  quadratic_drift_range: [-0.04, 0.04]
+  cross_talk_range: [0.0, 0.18]
+  smoothing_sigma_nm_range: [0.0, 2.0]
+  dropout_band_probability: 0.08
+  dropout_band_width_nm_range: [8.0, 35.0]
+
+normalization:
+  x: per_sample_per_channel_max_divide
+  y: per_sample_max_divide
+
+output:
+  dtype: float32
+  channel_order: [R, G, B, Gray]
+  write_manifest: true
+  write_metadata: true
+
+warning:
+  calibration_status: diagnostic relative calibration only, not final high-confidence calibration
+  local_run_limit: "The final config is N=80000. Pass --allow-large for the full run, or override --sample-count 20 for a smoke test."

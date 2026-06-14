@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime output
+*.log
+*.tmp
+relative_coordinate_spectrometer/results/reproduction_runs/
+relative_coordinate_spectrometer/results/profile_diagnostics/
+relative_coordinate_spectrometer/results/new_capture_roi_inspection/
+
+# Generated datasets are intentionally excluded from GitHub.
+relative_coordinate_spectrometer/data/generated/
+**/x.npy
+**/y.npy
+**/split.json
+
+# Web generated files
+relative_coordinate_spectrometer/systems/web/.venv/
+relative_coordinate_spectrometer/systems/web/logs/
+relative_coordinate_spectrometer/systems/web/frontend/.env
+relative_coordinate_spectrometer/systems/web/frontend/node_modules/
+relative_coordinate_spectrometer/systems/web/frontend/dist/

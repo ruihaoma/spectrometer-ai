@@ -1,0 +1,1 @@
+"""Spectrum image capture system."""

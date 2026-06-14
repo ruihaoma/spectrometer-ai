@@ -1,0 +1,43 @@
+{
+  "calibration_type": "relative_spectral_coordinate_linear_diagnostic",
+  "formula": "wavelength_nm = 223.039214714 * s + 411.1831404",
+  "coefficient_a": 223.039214714,
+  "coefficient_b": 411.1831404,
+  "s_range": [
+    0,
+    1
+  ],
+  "wavelength_range_nm": [
+    400,
+    650
+  ],
+  "monotonic_on_0_1": true,
+  "max_abs_residual_nm": 4.1923,
+  "source": "results/calibration/",
+  "roi_source": {
+    "type": "white_reference_roi_from_relative_calibration_diagnostic",
+    "x": 0,
+    "y": 0,
+    "w": 915,
+    "h": 1080,
+    "note": "temporary white-reference profile extraction range from current relative calibration diagnostic; not an old fixed ROI"
+  },
+  "relative_s_definition": {
+    "formula": "s = (y_local - y_short_anchor) / (y_long_anchor - y_short_anchor)",
+    "y_short_anchor": 286.0,
+    "y_long_anchor": 537.0,
+    "short_anchor_source": "hg",
+    "short_anchor_wavelength_nm": 408.0,
+    "long_anchor_source": "hene",
+    "long_anchor_wavelength_nm": 631.6,
+    "source_file": "results/calibration/selected_anchors.csv"
+  },
+  "diagnostic_quality": {
+    "linear_max_abs_residual_nm": 4.1923,
+    "linear_mean_abs_residual_nm": 2.902748,
+    "linear_rmse_nm": 3.049053,
+    "quadratic_monotonic_on_0_1": false,
+    "final_recommended_model": "linear"
+  },
+  "note": "diagnostic calibration only, not final formal calibration"
+}

@@ -1,0 +1,45 @@
+project:
+  name: relative_calib_mixed_v1
+  status: final_80006_sample_reproduction_config
+
+paths:
+  real_dataset_dir: data/generated/relative_calib_paired_dataset_v1
+  synthetic_dataset_dir: data/generated/relative_calib_synthetic_v1
+  output_dir: data/generated/relative_calib_mixed_v1
+
+wavelength:
+  start_nm: 400.0
+  end_nm: 650.0
+  step_nm: 0.1
+  point_count: 2501
+
+input:
+  channel_order: [R, G, B, Gray]
+  expected_x_shape_tail: [4, 2501]
+  expected_y_shape_tail: [2501]
+
+mixing:
+  include_real: true
+  include_synthetic: true
+  forbidden_real_sources:
+    - hg
+    - na
+    - hene
+    - dark
+  real_sample_role_required: paired_dataset_sample
+  manifest_sample_type_field: sample_type
+
+split:
+  train_ratio: 0.80
+  val_ratio: 0.10
+  test_ratio: 0.10
+  seed: 42
+  shuffle: true
+
+normalization:
+  x: already_per_sample_per_channel_max_divide
+  y: already_per_sample_max_divide
+
+warning:
+  calibration_status: diagnostic relative calibration only, not final high-confidence calibration
+  note: "Do not mix current hg/na/hene/dark calibration-reference captures into x.npy/y.npy."

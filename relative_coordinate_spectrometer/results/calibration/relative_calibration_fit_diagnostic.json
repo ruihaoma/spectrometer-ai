@@ -1,0 +1,102 @@
+{
+  "calibration_type": "relative_spectral_coordinate_diagnostic",
+  "final_recommended_model": "linear",
+  "recommended_for_next_step": true,
+  "linear": {
+    "model_type": "linear",
+    "formula": "wavelength_nm = 223.039214714*s + 411.1831404",
+    "coefficients": [
+      223.03921471419375,
+      411.1831403995834
+    ],
+    "selected_anchor_count": 4,
+    "max_abs_residual_nm": 4.192299588518267,
+    "mean_abs_residual_nm": 2.902747756680398,
+    "rmse_nm": 3.0490533808886084,
+    "wavelength_coverage_nm": 223.60000000000002,
+    "max_anchor_gap_nm": 110.10000000000002,
+    "monotonic_on_0_1": true,
+    "min_monotonic_delta_nm": 0.22326247719126968
+  },
+  "linear_warnings": [],
+  "quadratic_diagnostic": {
+    "model_type": "quadratic",
+    "formula": "wavelength_nm = -378.248571759*s^2 + 602.123320103*s + 407.715666284",
+    "coefficients": [
+      -378.2485717592928,
+      602.1233201031048,
+      407.71566628369516
+    ],
+    "selected_anchor_count": 5,
+    "max_abs_residual_nm": 0.4435171790725576,
+    "mean_abs_residual_nm": 0.2688169894865723,
+    "rmse_nm": 0.30752109984210974,
+    "wavelength_coverage_nm": 223.60000000000002,
+    "max_anchor_gap_nm": 110.10000000000002,
+    "monotonic_on_0_1": false,
+    "min_monotonic_delta_nm": -0.1541493455621321
+  },
+  "quadratic_warnings": [
+    "model is not monotonic nondecreasing on s=0..1"
+  ],
+  "selected_anchor_count": 4,
+  "selected_anchors": [
+    {
+      "source": "hg",
+      "standard_peak_wavelength_nm": "408.000000",
+      "standard_peak_rank": 2,
+      "selected_y_local": "286.000",
+      "selected_channel": "B",
+      "image_peak_height": "18.6839967",
+      "image_peak_prominence": "2.31334858",
+      "relative_s": "0.000000000",
+      "fit_used": "yes",
+      "selection_reason": "high standard/image prominence, channel-compatible candidate, unique y position, monotonic wavelength coverage",
+      "image_path": "data/raw/calibration/hg/hg_001_001_full.png",
+      "standard_file": "data/raw/reference_spectrometer/hg/hg.txt"
+    },
+    {
+      "source": "hg",
+      "standard_peak_wavelength_nm": "435.900000",
+      "standard_peak_rank": 7,
+      "selected_y_local": "312.000",
+      "selected_channel": "B",
+      "image_peak_height": "21.1064791",
+      "image_peak_prominence": "3.40918004",
+      "relative_s": "0.103585657",
+      "fit_used": "yes",
+      "selection_reason": "high standard/image prominence, channel-compatible candidate, unique y position, monotonic wavelength coverage",
+      "image_path": "data/raw/calibration/hg/hg_001_001_full.png",
+      "standard_file": "data/raw/reference_spectrometer/hg/hg.txt"
+    },
+    {
+      "source": "hg",
+      "standard_peak_wavelength_nm": "546.000000",
+      "standard_peak_rank": 10,
+      "selected_y_local": "433.000",
+      "selected_channel": "G",
+      "image_peak_height": "13.5303669",
+      "image_peak_prominence": "1.36966437",
+      "relative_s": "0.585657371",
+      "fit_used": "yes",
+      "selection_reason": "high standard/image prominence, channel-compatible candidate, unique y position, monotonic wavelength coverage",
+      "image_path": "data/raw/calibration/hg/hg_001_full.png",
+      "standard_file": "data/raw/reference_spectrometer/hg/hg.txt"
+    },
+    {
+      "source": "hene",
+      "standard_peak_wavelength_nm": "631.600000",
+      "standard_peak_rank": 1,
+      "selected_y_local": "537.000",
+      "selected_channel": "R",
+      "image_peak_height": "22.2074942",
+      "image_peak_prominence": "1.54082742",
+      "relative_s": "1.000000000",
+      "fit_used": "yes",
+      "selection_reason": "high standard/image prominence, channel-compatible candidate, unique y position, monotonic wavelength coverage",
+      "image_path": "data/raw/calibration/hene/hene_001_full.png",
+      "standard_file": "data/raw/reference_spectrometer/hene/hene.txt"
+    }
+  ],
+  "warning": "diagnostic calibration only; not production calibration"
+}

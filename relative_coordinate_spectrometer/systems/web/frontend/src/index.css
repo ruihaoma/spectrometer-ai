@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #172033;
+  background: #eef2f7;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Inter, "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.panel-title {
+  @apply mb-3 flex items-center gap-2 border-b border-lab-line pb-2 text-[13px] font-semibold text-lab-ink;
+}
+
+.field-label {
+  @apply mb-1 block text-[12px] font-medium text-lab-muted;
+}
+
+.field-value {
+  @apply min-h-8 rounded border border-lab-line bg-lab-field px-2 py-1.5 text-[12px] text-lab-ink;
+}
+
+.control-button {
+  @apply inline-flex h-9 items-center justify-center gap-2 rounded border border-lab-line bg-white px-3 text-[13px] font-medium text-lab-ink transition hover:bg-lab-blueSoft disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.primary-button {
+  @apply inline-flex h-9 items-center justify-center gap-2 rounded border border-lab-blue bg-lab-blue px-3 text-[13px] font-semibold text-white transition hover:bg-[#173f70] disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.tool-panel {
+  @apply border-b border-lab-line px-4 py-4;
+}
+
+.chart-shell {
+  @apply min-h-[290px] rounded-md border border-lab-line bg-white shadow-sm;
+}
+
+.chart-title {
+  @apply flex h-10 items-center justify-between border-b border-lab-line px-3 text-[13px] font-semibold text-lab-ink;
+}
+
+.chart-body {
+  @apply h-[248px] p-3;
+}
